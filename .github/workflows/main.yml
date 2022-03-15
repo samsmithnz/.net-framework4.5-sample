@@ -21,10 +21,10 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.2
       - name: Restore NuGet Packages
         run: nuget restore HelloWorldApp/HelloWorldApp.sln
-      - name: Build and Publish Web App
+      - name: Build and Publish App
         run: msbuild HelloWorldApp/HelloWorldApp.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
       - name: Upload Artifact
         uses: actions/upload-artifact@v1.0.0
         with:
           name: published_app
-          path: bin\Release\Publish
+          path: HelloWorldApp\HelloWorldApp\bin\Release\
