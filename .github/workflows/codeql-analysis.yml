@@ -57,7 +57,7 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore HelloWorldApp/HelloWorldApp.sln
     - name: Build and Publish App
-      run: msbuild HelloWorldApp/HelloWorldApp.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+      run: msbuild HelloWorldApp/HelloWorldApp.sln /p:Configuration=Release
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
